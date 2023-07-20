@@ -1,4 +1,6 @@
 roles = ["backend"]
 
+scopes = "write_customers,write_orders"
+
 [commands]
 dev = "npm run dev"

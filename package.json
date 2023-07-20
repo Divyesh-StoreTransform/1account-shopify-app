@@ -9,7 +9,8 @@
     "dev": "shopify app dev",
     "info": "shopify app info",
     "generate": "shopify app generate",
-    "deploy": "shopify app deploy"
+    "deploy": "shopify app deploy",
+    "zip": "zip -r ../shopify-app.zip * .env .platform/* .npmrc -x '*node_modules*/*' -x *.md"
   },
   "dependencies": {
     "@shopify/app": "3.47.5",

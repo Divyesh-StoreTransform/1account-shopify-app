@@ -1,4 +1,5 @@
 // @ts-check
+import 'dotenv/config'
 import { join } from "path";
 import { readFileSync } from "fs";
 import express from "express";
@@ -17,7 +18,7 @@ const STATIC_PATH =
   process.env.NODE_ENV === "production"
     ? `${process.cwd()}/frontend/dist`
     : `${process.cwd()}/frontend/`;
-
+console.log('STATIC_PATH: ', STATIC_PATH)
 const app = express();
 
 // Set up Shopify authentication and webhook handling
@@ -39,26 +40,26 @@ app.use("/api/*", shopify.validateAuthenticatedSession());
 
 app.use(express.json());
 
-app.get("/api/products/count", async (_req, res) => {
-  const countData = await shopify.api.rest.Product.count({
-    session: res.locals.shopify.session,
-  });
-  res.status(200).send(countData);
-});
+// app.get("/api/products/count", async (_req, res) => {
+//   const countData = await shopify.api.rest.Product.count({
+//     session: res.locals.shopify.session,
+//   });
+//   res.status(200).send(countData);
+// });
 
-app.get("/api/products/create", async (_req, res) => {
-  let status = 200;
-  let error = null;
+// app.get("/api/products/create", async (_req, res) => {
+//   let status = 200;
+//   let error = null;
 
-  try {
-    await productCreator(res.locals.shopify.session);
-  } catch (e) {
-    console.log(`Failed to process products/create: ${e.message}`);
-    status = 500;
-    error = e.message;
-  }
-  res.status(status).send({ success: status === 200, error });
-});
+//   try {
+//     await productCreator(res.locals.shopify.session);
+//   } catch (e) {
+//     console.log(`Failed to process products/create: ${e.message}`);
+//     status = 500;
+//     error = e.message;
+//   }
+//   res.status(status).send({ success: status === 200, error });
+// });
 
 app.use(shopify.cspHeaders());
 app.use(serveStatic(STATIC_PATH, { index: false }));
