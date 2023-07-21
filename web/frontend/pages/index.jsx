@@ -22,7 +22,7 @@ import {
 
 import page from '../utils/page'
 
-const ONE_ACCOUNT_API_URL = import.meta.env.VITE_ONE_ACCOUNT_WEBAPP_URL
+const ONE_ACCOUNT_API_URL = import.meta.env.VITE_ONE_ACCOUNT_API_URL
 
 export default function Index() {
   const [isLoading, setIsLoading] = useState(false)
