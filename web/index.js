@@ -4,6 +4,7 @@ import { join } from 'path'
 import { readFileSync } from 'fs'
 import express from 'express'
 import serveStatic from 'serve-static'
+import axios from 'axios'
 
 import shopify from './shopify.js'
 // import productCreator from './product-creator.js' TODO: rm unused code
@@ -19,6 +20,8 @@ const STATIC_PATH =
     ? `${process.cwd()}/frontend/dist`
     : `${process.cwd()}/frontend/`
 
+const ONE_ACCOUNT_API_URL = process.env.ONE_ACCOUNT_API_URL
+
 const app = express()
 
 //elastic beanstalk health check
@@ -32,6 +35,31 @@ app.get(shopify.config.auth.path, shopify.auth.begin())
 app.get(
   shopify.config.auth.callbackPath,
   shopify.auth.callback(),
+  async (req, res, next) => {
+    const shop = new URLSearchParams(req.url).get('shop')
+
+    res.cookie('shopOrigin', shop, {
+      httpOnly: false,
+      secure: true,
+      sameSite: 'none',
+    })
+
+    const accessToken = res.locals.shopify.session.accessToken
+
+    try {
+      const response = await axios.post(
+        `${ONE_ACCOUNT_API_URL}/platforms/shopify/create`,
+        {
+          shop,
+          token: accessToken,
+        }
+      )
+    } catch (error) {
+      console.log('ERROR: ', error)
+    }
+
+    next()
+  },
   shopify.redirectToShopifyOrAppRoot()
 )
 app.post(
