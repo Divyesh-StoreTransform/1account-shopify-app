@@ -19,8 +19,9 @@ import {
   TextField as CopyField,
   Label,
   ExceptionList,
+  Icon,
 } from '@shopify/polaris'
-import { AlertMinor } from '@shopify/polaris-icons'
+import { AlertMinor, CircleAlertMajor } from '@shopify/polaris-icons'
 
 import page from '../utils/page'
 
@@ -133,6 +134,13 @@ export default function Index() {
                       />
                     )}
                   </LegacyStack>
+                </LegacyStack>
+              ) : missingShopCookie ? (
+                <LegacyStack alignment='center'>
+                  <Icon source={CircleAlertMajor} color="critical" />
+                  <Text variant="heading3xl" as="h1">
+                    Please reinstall the 1Account app
+                  </Text>
                 </LegacyStack>
               ) : (
                 <LegacyStack vertical spacing="loose">
