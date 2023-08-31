@@ -14,7 +14,7 @@ import {
   Frame,
   Toast,
   Banner,
-  Stack,
+  LegacyStack,
   Tooltip,
   TextField as CopyField,
   Label,
@@ -101,13 +101,13 @@ export default function Index() {
           <Layout>
             <Layout.Section>
               {orderStatusScript ? (
-                <Stack vertical spacing="loose">
+                <LegacyStack vertical spacing="loose">
                   <CopyField
                     label="Please copy this code and paste it in the Settings > Checkout > Order processing > Additional script"
                     value={orderStatusScript}
                     multiline
                   />
-                  <Stack spacing="loose">
+                  <LegacyStack spacing="loose">
                     <CopyToClipboard
                       text={orderStatusScript}
                       onCopy={showCopiedSnackBar}
@@ -119,10 +119,10 @@ export default function Index() {
                         Change Project Details
                       </Button>
                     </Tooltip>
-                  </Stack>
-                </Stack>
+                  </LegacyStack>
+                </LegacyStack>
               ) : (
-                <Stack vertical spacing="loose">
+                <LegacyStack vertical spacing="loose">
                   <Heading element="h1">
                     Please, input Push API_URL project details
                   </Heading>
@@ -163,7 +163,7 @@ export default function Index() {
                       </Form>
                     )}
                   </Formik>
-                </Stack>
+                </LegacyStack>
               )}
 
               {isScriptCopied && (
