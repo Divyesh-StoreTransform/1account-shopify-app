@@ -7,7 +7,7 @@ import * as Yup from 'yup'
 import {
   Page,
   Layout,
-  Heading,
+  Text,
   FormLayout,
   Button,
   Loading,
@@ -123,9 +123,9 @@ export default function Index() {
                 </LegacyStack>
               ) : (
                 <LegacyStack vertical spacing="loose">
-                  <Heading element="h1">
+                  <Text variant="headingXl" as="h1">
                     Please, input Push API_URL project details
-                  </Heading>
+                  </Text>
                   {serverError && (
                     <Banner title={serverError} status="critical" />
                   )}
