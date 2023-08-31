@@ -4,6 +4,7 @@ import { Base64 } from 'js-base64'
 import { CopyToClipboard } from 'react-copy-to-clipboard'
 import { Formik, Form, Field } from 'formik'
 import * as Yup from 'yup'
+import Cookies from 'js-cookie'
 import {
   Page,
   Layout,
@@ -15,10 +16,11 @@ import {
   Toast,
   Banner,
   LegacyStack,
-  Tooltip,
   TextField as CopyField,
   Label,
+  ExceptionList,
 } from '@shopify/polaris'
+import { AlertMinor } from '@shopify/polaris-icons'
 
 import page from '../utils/page'
 
@@ -29,6 +31,7 @@ export default function Index() {
   const [serverError, setServerError] = useState('')
   const [orderStatusScript, setOrderStatusScript] = useState('')
   const [isScriptCopied, setIsScriptCopied] = useState(false)
+  const missingShopCookie = !Cookies.get('shopOrigin')
 
   useEffect(() => {
     setOrderStatusScript(localStorage.getItem('pushScript'))
@@ -114,11 +117,21 @@ export default function Index() {
                     >
                       <Button primary>Copy</Button>
                     </CopyToClipboard>
-                    <Tooltip content="Before changing you must delete the project manually, please, look our setup documentation.">
-                      <Button secondary onClick={handleChangeDetails}>
-                        Change Project Details
-                      </Button>
-                    </Tooltip>
+                    <Button secondary onClick={handleChangeDetails}>
+                      Change Project Details
+                    </Button>
+
+                    {missingShopCookie && (
+                      <ExceptionList
+                        items={[
+                          {
+                            icon: AlertMinor,
+                            description:
+                              'Changing the project details requires reinstallation of the 1Account app.',
+                          },
+                        ]}
+                      />
+                    )}
                   </LegacyStack>
                 </LegacyStack>
               ) : (
