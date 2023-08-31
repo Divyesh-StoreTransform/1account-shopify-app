@@ -100,7 +100,28 @@ export default function Index() {
           {isLoading && <Loading />}
           <Layout>
             <Layout.Section>
-              {!orderStatusScript && (
+              {orderStatusScript ? (
+                <Stack vertical spacing="loose">
+                  <CopyField
+                    label="Please copy this code and paste it in the Settings > Checkout > Order processing > Additional script"
+                    value={orderStatusScript}
+                    multiline
+                  />
+                  <Stack spacing="loose">
+                    <CopyToClipboard
+                      text={orderStatusScript}
+                      onCopy={showCopiedSnackBar}
+                    >
+                      <Button primary>Copy</Button>
+                    </CopyToClipboard>
+                    <Tooltip content="Before changing you must delete the project manually, please, look our setup documentation.">
+                      <Button secondary onClick={handleChangeDetails}>
+                        Change Project Details
+                      </Button>
+                    </Tooltip>
+                  </Stack>
+                </Stack>
+              ) : (
                 <Stack vertical spacing="loose">
                   <Heading element="h1">
                     Please, input Push API_URL project details
@@ -142,29 +163,6 @@ export default function Index() {
                       </Form>
                     )}
                   </Formik>
-                </Stack>
-              )}
-
-              {orderStatusScript && (
-                <Stack vertical spacing="loose">
-                  <CopyField
-                    label="Please copy this code and paste it in the Settings > Checkout > Order processing > Additional script"
-                    value={orderStatusScript}
-                    multiline
-                  />
-                  <Stack spacing="loose">
-                    <CopyToClipboard
-                      text={orderStatusScript}
-                      onCopy={showCopiedSnackBar}
-                    >
-                      <Button primary>Copy</Button>
-                    </CopyToClipboard>
-                    <Tooltip content="Before changing you must delete the project manually, please, look our setup documentation.">
-                      <Button secondary onClick={handleChangeDetails}>
-                        Change Project Details
-                      </Button>
-                    </Tooltip>
-                  </Stack>
                 </Stack>
               )}
 
