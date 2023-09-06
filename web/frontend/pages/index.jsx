@@ -4,21 +4,24 @@ import { Base64 } from 'js-base64'
 import { CopyToClipboard } from 'react-copy-to-clipboard'
 import { Formik, Form, Field } from 'formik'
 import * as Yup from 'yup'
+import Cookies from 'js-cookie'
 import {
   Page,
   Layout,
-  Heading,
+  Text,
   FormLayout,
   Button,
   Loading,
   Frame,
   Toast,
   Banner,
-  Stack,
-  Tooltip,
+  LegacyStack,
   TextField as CopyField,
   Label,
+  ExceptionList,
+  Icon,
 } from '@shopify/polaris'
+import { AlertMinor, CircleAlertMajor } from '@shopify/polaris-icons'
 
 import page from '../utils/page'
 
@@ -29,6 +32,7 @@ export default function Index() {
   const [serverError, setServerError] = useState('')
   const [orderStatusScript, setOrderStatusScript] = useState('')
   const [isScriptCopied, setIsScriptCopied] = useState(false)
+  const missingShopCookie = !Cookies.get('shopOrigin')
 
   useEffect(() => {
     setOrderStatusScript(localStorage.getItem('pushScript'))
@@ -100,11 +104,49 @@ export default function Index() {
           {isLoading && <Loading />}
           <Layout>
             <Layout.Section>
-              {!orderStatusScript && (
-                <Stack vertical spacing="loose">
-                  <Heading element="h1">
+              {orderStatusScript ? (
+                <LegacyStack vertical spacing="loose">
+                  <CopyField
+                    label="Please copy this code and paste it in the Settings > Checkout > Order processing > Additional script"
+                    value={orderStatusScript}
+                    multiline
+                  />
+                  <LegacyStack spacing="loose">
+                    <CopyToClipboard
+                      text={orderStatusScript}
+                      onCopy={showCopiedSnackBar}
+                    >
+                      <Button primary>Copy</Button>
+                    </CopyToClipboard>
+                    <Button secondary onClick={handleChangeDetails}>
+                      Change Project Details
+                    </Button>
+
+                    {missingShopCookie && (
+                      <ExceptionList
+                        items={[
+                          {
+                            icon: AlertMinor,
+                            description:
+                              'Changing the project details requires reinstallation of the 1Account app.',
+                          },
+                        ]}
+                      />
+                    )}
+                  </LegacyStack>
+                </LegacyStack>
+              ) : missingShopCookie ? (
+                <LegacyStack alignment='center'>
+                  <Icon source={CircleAlertMajor} color="critical" />
+                  <Text variant="heading3xl" as="h1">
+                    Please reinstall the 1Account app
+                  </Text>
+                </LegacyStack>
+              ) : (
+                <LegacyStack vertical spacing="loose">
+                  <Text variant="headingXl" as="h1">
                     Please, input Push API_URL project details
-                  </Heading>
+                  </Text>
                   {serverError && (
                     <Banner title={serverError} status="critical" />
                   )}
@@ -142,30 +184,7 @@ export default function Index() {
                       </Form>
                     )}
                   </Formik>
-                </Stack>
-              )}
-
-              {orderStatusScript && (
-                <Stack vertical spacing="loose">
-                  <CopyField
-                    label="Please copy this code and paste it in the Settings > Checkout > Order processing > Additional script"
-                    value={orderStatusScript}
-                    multiline
-                  />
-                  <Stack spacing="loose">
-                    <CopyToClipboard
-                      text={orderStatusScript}
-                      onCopy={showCopiedSnackBar}
-                    >
-                      <Button primary>Copy</Button>
-                    </CopyToClipboard>
-                    <Tooltip content="Before changing you must delete the project manually, please, look our setup documentation.">
-                      <Button secondary onClick={handleChangeDetails}>
-                        Change Project Details
-                      </Button>
-                    </Tooltip>
-                  </Stack>
-                </Stack>
+                </LegacyStack>
               )}
 
               {isScriptCopied && (
