@@ -1,6 +1,6 @@
 import { LATEST_API_VERSION } from '@shopify/shopify-api'
 import { shopifyApp } from '@shopify/shopify-app-express'
-import { restResources } from '@shopify/shopify-api/rest/admin/2023-04'
+import { restResources } from '@shopify/shopify-api/rest/admin/2023-07'
 
 const ONE_ACCOUNT_SHOPIFY_APP_URL = process.env.ONE_ACCOUNT_SHOPIFY_APP_URL
 const isProduction = process.env.NODE_ENV === 'production'

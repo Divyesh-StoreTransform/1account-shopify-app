@@ -57,7 +57,9 @@ function generatePush(logo, avLevel, clientId) {
     })
   }
   
-  {% if checkout.order.shipping_address.country == "United Kingdom" or checkout.order.billing_address.country == "United Kingdom" %}
+  {% assign show_iframe_countries = 'United Kingdom,Guernsey,Isle of Man,Jersey' | split: ',' %}
+  
+  {% if show_iframe_countries contains checkout.order.billing_address.country or uk_countries contains checkout.order.shipping_address.country %}
   
     let allTags = []
     const cartSize = "{{checkout.order.line_items.size}}"
