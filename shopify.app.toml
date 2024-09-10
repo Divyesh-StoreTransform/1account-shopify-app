@@ -1,3 +1,29 @@
-# This file stores configurations for your Shopify app.
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
 
+client_id = "c3e00aa8d6d2cc4786d1aa47cad273d2"
+name = "clientmainapp"
+handle = "clientmainapp"
+application_url = "https://trick-recipient-brussels-atm.trycloudflare.com"
+embedded = true
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "quickstart-84a9cb58.myshopify.com"
+include_config_on_deploy = true
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
 scopes = "write_customers,write_orders"
+
+[auth]
+redirect_urls = [
+  "https://trick-recipient-brussels-atm.trycloudflare.com/auth/callback",
+  "https://trick-recipient-brussels-atm.trycloudflare.com/auth/shopify/callback",
+  "https://trick-recipient-brussels-atm.trycloudflare.com/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2024-07"
+
+[pos]
+embedded = false

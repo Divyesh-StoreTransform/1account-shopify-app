@@ -55,7 +55,7 @@ app.get(
         }
       )
     } catch (error) {
-      console.log('ERROR: ', error)
+      console.log('ERROR 111: ', error)
     }
 
     next()

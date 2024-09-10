@@ -1,0 +1,6 @@
+SHOPIFY_API_SECRET=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
+SHOPIFY_API_KEY=da9dd0fdee639f7028675eabb7be7a2a
+SCOPES=write_customers,write_orders
+ONE_ACCOUNT_API_URL=https://api.1accountqa.net
+NODE_ENV=production
+ONE_ACCOUNT_SHOPIFY_APP_URL=test-shopify.1accountqa.net

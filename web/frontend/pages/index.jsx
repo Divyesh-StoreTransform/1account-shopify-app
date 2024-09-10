@@ -25,7 +25,9 @@ import { AlertMinor, CircleAlertMajor } from '@shopify/polaris-icons'
 
 import page from '../utils/page'
 
-const ONE_ACCOUNT_API_URL = import.meta.env.VITE_ONE_ACCOUNT_API_URL
+//const ONE_ACCOUNT_API_URL = import.meta.env.VITE_ONE_ACCOUNT_API_URL
+
+const ONE_ACCOUNT_API_URL ='https://api.1account.net';
 
 export default function Index() {
   const [isLoading, setIsLoading] = useState(false)
@@ -48,10 +50,25 @@ export default function Index() {
       setServerError('')
       setIsLoading(true)
 
+      const headers = {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Headers': 'X-Requested-With,content-typet',
+        'Access-Control-Allow-Methods':'GET, POST, OPTIONS, PUT, PATCH, DELETE',   
+        'Access-Control-Allow-Credentials': 'true',
+      }
+
       axios
         .post(`${ONE_ACCOUNT_API_URL}/oauth/publisher/client-auth`, {
+          headers: {
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Headers': 'X-Requested-With,content-typet',
+            'Access-Control-Allow-Methods':'GET, POST, OPTIONS, PUT, PATCH, DELETE',   
+            'Access-Control-Allow-Credentials': 'true'
+            
+        },
           id: values.clientId,
           hash: Base64.encode(values.clientSecret),
+         
         })
         .then(({ data: project }) => {
           const projectData = {
