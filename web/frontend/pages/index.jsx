@@ -221,7 +221,7 @@ export default function Index() {
                   </div>
                 )   
 
-                /* RESPONSE 200 IS GET BUT CLIENT ID NOT FOUND THEN SHOW 1ACCOUNT FORM END */
+                /* RESPONSE 200 IS GET BUT CLIENT ID NOT FOUND THEN SHOW 1 ACCOUNT FORM END */
 
                          }else{
 

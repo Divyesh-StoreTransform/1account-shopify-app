@@ -24,7 +24,7 @@ function ProductReview() {
   if (allowed_country.includes(shipping_Country) || allowed_country.includes(billing_Country)) {
 
         
-        console.log('Shipping or billing country is allowed.');
+        console.log('Shipping or billing Country is allowed.');
 
   } else {
 
