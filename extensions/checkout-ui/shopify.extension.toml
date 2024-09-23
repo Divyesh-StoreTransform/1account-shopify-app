@@ -22,6 +22,6 @@ module = "./src/Checkout.jsx"
 export = "thankYouBlock"
 
 [[extensions.targeting]]
-target = "customer-account.order-status.block.render"
+target = "purchase.thank-you.cart-line-item.render-after"
 module = "./src/Checkout.jsx"
 export = "orderDetailsBlock"

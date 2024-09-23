@@ -4,9 +4,10 @@
   "version": "1.0.0",
   "license": "UNLICENSED",
   "dependencies": {
-    "react": "^18.0.0",
+    "@shopify/checkout-ui-extensions-react": "^0.27.3",
     "@shopify/ui-extensions": "2024.7.x",
-    "@shopify/ui-extensions-react": "2024.7.x"
+    "@shopify/ui-extensions-react": "2024.7.x",
+    "react": "^18.0.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.0",

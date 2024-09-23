@@ -3,7 +3,7 @@
 client_id = "e0c46d9f8cc4e882fbfa00b134aab0d1"
 name = "1account"
 handle = "1account"
-application_url = "https://asks-wonder-railway-faces.trycloudflare.com"
+application_url = "https://wave-swiss-statute-webmaster.trycloudflare.com"
 embedded = true
 
 [build]
@@ -17,9 +17,9 @@ scopes = ""
 
 [auth]
 redirect_urls = [
-  "https://asks-wonder-railway-faces.trycloudflare.com/auth/callback",
-  "https://asks-wonder-railway-faces.trycloudflare.com/auth/shopify/callback",
-  "https://asks-wonder-railway-faces.trycloudflare.com/api/auth/callback"
+  "https://wave-swiss-statute-webmaster.trycloudflare.com/auth/callback",
+  "https://wave-swiss-statute-webmaster.trycloudflare.com/auth/shopify/callback",
+  "https://wave-swiss-statute-webmaster.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]
