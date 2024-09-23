@@ -15,7 +15,7 @@
   "dependencies": {
     "@shopify/app": "3.47.5",
     "@shopify/app-bridge": "^3.7.10",
-    "app": "^0.1.0",
+    "app": "^0.1.0", 
     "cors": "^2.8.5"
   },
   "author": "johnhartnett",

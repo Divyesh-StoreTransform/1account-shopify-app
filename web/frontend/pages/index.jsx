@@ -243,7 +243,7 @@ export default function Index() {
                         }
            }else
            {
-            /* RESPONSE IS NULL OR UNDEFINED FILTER THEN SHOW 1 ACCOUNT FORM */   
+            /* RESPONSE IS NULL OR UNDEFINED FILTER THEN SHOW 1ACCOUNT FORM */   
             return (
 
               <div style={{ padding: '0 2rem' }}>

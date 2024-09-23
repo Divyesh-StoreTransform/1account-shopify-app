@@ -17,7 +17,7 @@ function ProductReview() {
   /* WE GET billingAddress - countryCode HERE */
   const billing_Country = buyerJourney.billingAddress.current.countryCode;
 
-  /* ALLOWED THIS CONTRY */
+  /* ALLOWED THIS CONTRY  */
   const allowed_country = ['GB','GG','IM','JE'];
 
   /* IF THIS COUNTRY MATCHED THEN GOING TO IF LOOP */
@@ -28,8 +28,7 @@ function ProductReview() {
 
   } else {
 
-            /* COUNTRY IS NOT MATCHED */
-            console.log('Country is not allowed.');    
+            /* COUNTRY IS NOT MATCHED */             
             console.log('Country is not allowed.'+shipping_Country);    
             console.log('Country is not allowed.'+billing_Country);        
   }
