@@ -27,6 +27,9 @@ import { useAppBridge } from '@shopify/app-bridge-react'; /* DO NOT DELETE THIS 
 import page from '../utils/page'
 
 const ONE_ACCOUNT_API_URL ='https://api.1account.net';
+const ONE_ACCOUNT_SHOPIFY_APP_URL = process.env.ONE_ACCOUNT_SHOPIFY_APP_URL;
+console.log('staticurl');
+console.log(ONE_ACCOUNT_SHOPIFY_APP_URL);
 
 export default function Index() {
 

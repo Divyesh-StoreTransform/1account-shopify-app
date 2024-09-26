@@ -3,7 +3,7 @@
 client_id = "e0c46d9f8cc4e882fbfa00b134aab0d1"
 name = "1account"
 handle = "1account"
-application_url = "https://wave-swiss-statute-webmaster.trycloudflare.com"
+application_url = "https://womens-startup-options-laid.trycloudflare.com"
 embedded = true
 
 [build]
@@ -11,15 +11,18 @@ automatically_update_urls_on_dev = true
 dev_store_url = "quickstart-84a9cb58.myshopify.com"
 include_config_on_deploy = true
 
+[access.admin]
+direct_api_mode = "online"
+
 [access_scopes]
 # Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
-scopes = ""
+scopes = "unauthenticated_read_product_tags"
 
 [auth]
 redirect_urls = [
-  "https://wave-swiss-statute-webmaster.trycloudflare.com/auth/callback",
-  "https://wave-swiss-statute-webmaster.trycloudflare.com/auth/shopify/callback",
-  "https://wave-swiss-statute-webmaster.trycloudflare.com/api/auth/callback"
+  "https://womens-startup-options-laid.trycloudflare.com/auth/callback",
+  "https://womens-startup-options-laid.trycloudflare.com/auth/shopify/callback",
+  "https://womens-startup-options-laid.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]

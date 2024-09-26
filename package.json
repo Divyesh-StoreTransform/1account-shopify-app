@@ -13,10 +13,12 @@
     "zip": "zip -r ../shopify-app.zip * .env .platform/* .npmrc -x '*node_modules*/*' -x *.md"
   },
   "dependencies": {
+    "@apollo/client": "^3.11.8",
     "@shopify/app": "3.47.5",
     "@shopify/app-bridge": "^3.7.10",
     "app": "^0.1.0",
-    "cors": "^2.8.5"
+    "cors": "^2.8.5",
+    "react-modal": "^3.16.1"
   },
   "author": "johnhartnett",
   "private": true,
