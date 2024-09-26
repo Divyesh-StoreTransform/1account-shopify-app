@@ -155,7 +155,7 @@ export default function Index() {
                          //console.log(client_id);
                          
 
-            /* RESPONSE 200 IS GET BUT CLIENT ID NOT FOUND THEN SHOW 1ACCOUNT FORM FILTER LEVEL 2 START */
+            /* RESPONSE 200 IS GET BUT CLIENT ID NOT FOUND THEN SHOW 1 ACCOUNT FORM FILTER LEVEL 2 START */
             if(!client_id){                                                     
               
                 return (

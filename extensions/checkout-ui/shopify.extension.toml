@@ -10,8 +10,6 @@ api_version = "2024-07"
 # JavaScript `fetch()` API. Learn more:
 # https://shopify.dev/docs/api/checkout-ui-extensions/unstable/configuration#network-access
 
-
-
 [[extensions]]
 type = "ui_extension"
 name = "order-status-thank-you"

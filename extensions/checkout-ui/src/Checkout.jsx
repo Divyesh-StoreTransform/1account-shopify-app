@@ -12,7 +12,7 @@ import axios from 'axios';
 const orderDetailsBlock = reactExtension("purchase.thank-you.block.render", () => <ProductReview />);
 export { orderDetailsBlock };
 
-function ProductReview() {
+function ProductReview() { 
 
           const buyerJourney = useApi();   
           

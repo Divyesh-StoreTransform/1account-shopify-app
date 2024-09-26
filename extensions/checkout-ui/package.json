@@ -8,7 +8,7 @@
     "@shopify/ui-extensions": "2024.7.x",
     "@shopify/ui-extensions-react": "2024.7.x",
     "react": "^18.0.0",
-    "react-modal": "^3.16.1"
+    "react-modal": "^3.16.1" 
   },
   "devDependencies": {
     "@types/react": "^18.0.0",
