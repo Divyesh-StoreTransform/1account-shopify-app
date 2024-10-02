@@ -27,6 +27,9 @@ function ProductReview() {
                   const [productIds, setProductIds] = useState([]);
                   const [allTags, setAllTags] = useState([]);
 
+                  
+          if( buyerJourney.shippingAddress !== undefined ){  
+
                   /* WE GET shippingAddress - countryCode HERE */
                   const shipping_Country = buyerJourney.shippingAddress.current.countryCode;
                   /* WE GET billingAddress - countryCode HERE */
@@ -34,8 +37,7 @@ function ProductReview() {
 
                   /* ALLOWED THIS CONTRY  */
                   const allowed_country = ['GB','GG','IM','JE'];
-
-          if( buyerJourney.shippingAddress !== undefined ){                  
+                
 
                 /* IF THIS COUNTRY MATCHED THEN GOING TO IF LOOP */
                 if (allowed_country.includes(shipping_Country) || allowed_country.includes(billing_Country)) 
