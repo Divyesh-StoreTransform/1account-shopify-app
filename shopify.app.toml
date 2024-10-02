@@ -3,7 +3,7 @@
 client_id = "c3e00aa8d6d2cc4786d1aa47cad273d2"
 name = "clientmainapp"
 handle = "clientmainapp"
-application_url = "https://trick-recipient-brussels-atm.trycloudflare.com"
+application_url = "https://charge-missile-elegant-essays.trycloudflare.com"
 embedded = true
 
 [build]
@@ -13,13 +13,13 @@ include_config_on_deploy = true
 
 [access_scopes]
 # Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
-scopes = "write_customers,write_orders,unauthenticated_read_product_tags"
+scopes = "unauthenticated_read_product_tags,write_customers,write_orders"
 
 [auth]
 redirect_urls = [
-  "https://trick-recipient-brussels-atm.trycloudflare.com/auth/callback",
-  "https://trick-recipient-brussels-atm.trycloudflare.com/auth/shopify/callback",
-  "https://trick-recipient-brussels-atm.trycloudflare.com/api/auth/callback"
+  "https://charge-missile-elegant-essays.trycloudflare.com/auth/callback",
+  "https://charge-missile-elegant-essays.trycloudflare.com/auth/shopify/callback",
+  "https://charge-missile-elegant-essays.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]

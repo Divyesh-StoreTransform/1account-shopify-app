@@ -99,9 +99,10 @@ function ProductReview() {
 
                                     return (
                                       <Link
+                                        
                                         overlay={
                                           <Modal
-                                            id="my-modal"
+                                            id="my-modal"                                            
                                             padding
                                             title="Return policy"
                                           >
@@ -128,7 +129,7 @@ function ProductReview() {
                                           </Modal>
                                         }
                                       >
-                                        Open Modal  
+                                        Open Modal 1
                                       </Link>
                                     );
 

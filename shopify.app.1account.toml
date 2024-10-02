@@ -3,7 +3,7 @@
 client_id = "e0c46d9f8cc4e882fbfa00b134aab0d1"
 name = "1account"
 handle = "1account"
-application_url = "https://womens-startup-options-laid.trycloudflare.com"
+application_url = "https://peninsula-tension-lean-action.trycloudflare.com"
 embedded = true
 
 [build]
@@ -16,13 +16,13 @@ direct_api_mode = "online"
 
 [access_scopes]
 # Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
-scopes = "unauthenticated_read_product_tags"
+scopes = "unauthenticated_read_product_tags,write_customers,write_orders"
 
 [auth]
 redirect_urls = [
-  "https://womens-startup-options-laid.trycloudflare.com/auth/callback",
-  "https://womens-startup-options-laid.trycloudflare.com/auth/shopify/callback",
-  "https://womens-startup-options-laid.trycloudflare.com/api/auth/callback"
+  "https://peninsula-tension-lean-action.trycloudflare.com/auth/callback",
+  "https://peninsula-tension-lean-action.trycloudflare.com/auth/shopify/callback",
+  "https://peninsula-tension-lean-action.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]
