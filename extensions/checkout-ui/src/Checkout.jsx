@@ -7,7 +7,7 @@ import {
   TextBlock,
 } from '@shopify/ui-extensions-react/checkout';
 import React, {useEffect, useState} from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 
 const orderDetailsBlock = reactExtension("purchase.thank-you.block.render", () => <ProductReview />);
 export { orderDetailsBlock };
@@ -34,6 +34,8 @@ function ProductReview() {
 
                   /* ALLOWED THIS CONTRY  */
                   const allowed_country = ['GB','GG','IM','JE'];
+
+          if( buyerJourney.shippingAddress !== undefined ){                  
 
                 /* IF THIS COUNTRY MATCHED THEN GOING TO IF LOOP */
                 if (allowed_country.includes(shipping_Country) || allowed_country.includes(billing_Country)) 
@@ -129,7 +131,7 @@ function ProductReview() {
                                           </Modal>
                                         }
                                       >
-                                        Open Modal 1
+                                        Open Modal
                                       </Link>
                                     );
 
@@ -149,5 +151,9 @@ function ProductReview() {
                             /* COUNTRY IS NOT MATCHED */             
                             console.log('Country is not allowed.'+shipping_Country);    
                             console.log('Country is not allowed.'+billing_Country);        
-                  }         
+                  }   
+                  
+          }else{
+                  console.log('Extension not loaded');
+              }
 }

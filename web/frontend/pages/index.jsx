@@ -126,7 +126,7 @@ export default function Index() {
 
         /* DEFAULT FUNCTIONS AND VARAIBLES END */
         
-      /* USING useAppBridge GET SHOPIFY STORE URL */
+      /* USING useAppBridge GET SHOPIFY STORE URL MAY AFFECTED IN LIVE WEBSITE */
       const shopUrlWithouthttps = `${atob(window.__SHOPIFY_DEV_HOST).split('/').slice(-1)}.myshopify.com`;
       // console.log('APi Verification started');  
       // console.log(shopUrlWithouthttps);  
