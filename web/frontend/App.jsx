@@ -19,7 +19,7 @@ export default function App() {
                 {
                   label: 'Installation Guide',
                   destination: '/installationGuide',
-                },
+                },                
               ]}
             />
             <Routes pages={pages} />

@@ -5,6 +5,15 @@ import { CopyToClipboard } from 'react-copy-to-clipboard'
 import { Formik, Form, Field } from 'formik'
 import * as Yup from 'yup'
 import Cookies from 'js-cookie'
+
+import {
+  reactExtension,
+  useApi,  
+  Link,
+  TextBlock,
+} from '@shopify/ui-extensions-react/checkout';
+import Modal from 'react-modal';
+
 import {
   Page,
   Layout,
@@ -30,6 +39,66 @@ const ONE_ACCOUNT_API_URL ='https://api.1account.net';
 const ONE_ACCOUNT_SHOPIFY_APP_URL = process.env.ONE_ACCOUNT_SHOPIFY_APP_URL;
 console.log('staticurl');
 console.log(ONE_ACCOUNT_SHOPIFY_APP_URL);
+
+
+
+
+//Modal.setAppElement('#root'); // Set the app element for accessibility
+
+// React component for the custom modal
+const CustomModal = ({ onClose }) => {
+  return (
+    
+    <>
+
+         <TextBlock>
+         We have a 50 day return policy, which means you have 30 days after receiving your item to request a return.
+      </TextBlock>        
+        
+        <TextBlock >
+          To be eligible for a return, your item must be in the same condition that you received it, unworn or unused, with tags, and in its original packaging. You’ll also need the receipt or proof of purchase.
+        </TextBlock>
+       
+        <Button onPress={onClose} >
+          Close
+        </Button>
+        </>
+
+  );
+};
+
+// Main extension component
+const orderDetailsBlock = reactExtension("purchase.thank-you.block.render", () => <ProductReview />);
+export { orderDetailsBlock };
+
+function ProductReview() {
+  const { ui } = useApi();
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  useEffect(() => {
+    // Automatically open the modal when the component mounts
+    setModalOpen(true);
+  }, []);
+
+  const handleClose = () => {
+    setModalOpen(false);
+  };
+
+  return (
+    <>
+      <Link onPress={() => setModalOpen(true)}>
+        1account Verification
+      </Link>
+
+      {isModalOpen && <CustomModal onClose={handleClose} />}
+    </>
+  );
+}
+
+
+
+
+
 
 export default function Index() {
 

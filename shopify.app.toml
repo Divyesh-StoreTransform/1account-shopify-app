@@ -1,9 +1,9 @@
-# Learn more about configuring your appp at https://shopify.dev/docs/apps/tools/cli/configuration
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
 
-client_id = "c3e00aa8d6d2cc4786d1aa47cad273d2"
-name = "clientmainapp"
-handle = "clientmainapp"
-application_url = "https://charge-missile-elegant-essays.trycloudflare.com"
+client_id = "83f6a8d8e4bfc4004b05ce0b271f35ac"
+name = "1account"
+handle = "1account"
+application_url = "https://fcc-lexington-artificial-layers.trycloudflare.com"
 embedded = true
 
 [build]
@@ -11,19 +11,22 @@ automatically_update_urls_on_dev = true
 dev_store_url = "quickstart-84a9cb58.myshopify.com"
 include_config_on_deploy = true
 
+[access.admin]
+direct_api_mode = "online"
+
 [access_scopes]
 # Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
-scopes = "unauthenticated_read_product_tags,write_customers,write_orders"
+scopes = ""
 
 [auth]
 redirect_urls = [
-  "https://charge-missile-elegant-essays.trycloudflare.com/auth/callback",
-  "https://charge-missile-elegant-essays.trycloudflare.com/auth/shopify/callback",
-  "https://charge-missile-elegant-essays.trycloudflare.com/api/auth/callback"
+  "https://fcc-lexington-artificial-layers.trycloudflare.com/auth/callback",
+  "https://fcc-lexington-artificial-layers.trycloudflare.com/auth/shopify/callback",
+  "https://fcc-lexington-artificial-layers.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]
-api_version = "2024-07"
+api_version = "2024-10"
 
 [pos]
 embedded = false

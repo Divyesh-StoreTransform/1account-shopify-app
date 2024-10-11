@@ -16,9 +16,13 @@
     "@apollo/client": "^3.11.8",
     "@shopify/app": "3.47.5",
     "@shopify/app-bridge": "^3.7.10",
+    "@shopify/app-bridge-react": "^4.1.5",
+    "@shopify/checkout-ui-extensions": "^0.27.3",
+    "@shopify/polaris": "^13.9.0",
     "app": "^0.1.0",
     "cors": "^2.8.5",
-    "react-modal": "^3.16.1"
+    "react-modal": "^3.16.1",
+    "styled-components": "^6.1.13"
   },
   "author": "johnhartnett",
   "private": true,

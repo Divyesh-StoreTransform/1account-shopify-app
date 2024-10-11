@@ -37,7 +37,10 @@
     "react-query": "^3.34.19",
     "react-router-dom": "^6.3.0",
     "vite": "^4.3.9",
-    "yup": "^1.2.0"
+    "yup": "^1.2.0",
+    "react-modal": "^3.16.1" ,
+    "@shopify/ui-extensions": "2024.7.x",
+    "@shopify/ui-extensions-react": "2024.7.x"
   },
   "devDependencies": {
     "@shopify/stylelint-polaris": "^12.0.0",
